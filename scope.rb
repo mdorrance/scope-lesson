@@ -117,20 +117,37 @@
 # print oven
 
 #********************************************
+#
+# class PizzaOven4
+#   def cook(temp, crust)
+#     puts "Cookin #{crust} at #{temp}"
+#   end
+#
+# def temp
+#   "400 F"
+# end
+#
+# def crust
+#   "NY Style"
+# end
+# end
+# oven = PizzaOven4.new
+# oven.cook("400 F", "anchoves") # pass in the parameters
+# oven.cook(oven.temp, oven.crust) # use class methods that return a VALUE as params
 
-class PizzaOven4
-  def cook(temp, crust)
+
+class PizzaOven5
+  def cook(crust = "deep dish", temp = 300)
     puts "Cookin #{crust} at #{temp}"
   end
 
-def temp
-  "400 F"
-end
+  def temp
+    "400 F"
+  end
 
-def crust
-  "NY Style"
+  def crust
+    "NY Style"
+  end
 end
-end
-oven = PizzaOven4.new
-oven.cook("400 F", "anchoves") # pass in the parameters
-oven.cook(oven.temp, oven.crust) # use class methods that return a VALUE as params
+oven = PizzaOven5.new
+oven.cook("better pizza", "400") # overrides default values
