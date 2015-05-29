@@ -69,3 +69,18 @@ end
 #puts creature will error out because it is local to the block
 #the block has access to the local variables because it is still in the scope
 #of the class as a variable
+
+#*******************************************************
+
+new_creatures = ["patronus", "hippogriff"]
+villian = "Voldemort"
+hero = "Dumbledore"
+puts hero
+new_creatures.each do |villain|
+  hero = "Harry"
+  puts "this time the villain is the #{villain} and the hero is #{hero}"
+end
+
+puts hero
+# local variable in the block grabs "Harry" before it will outside of the block
+# can change the outside variable too so BE CAREFUL!!
