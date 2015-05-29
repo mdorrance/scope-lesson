@@ -81,6 +81,37 @@ new_creatures.each do |villain|
   puts "this time the villain is the #{villain} and the hero is #{hero}"
 end
 
-puts hero
+puts hero # results in Harry and NOT Dumbledore
 # local variable in the block grabs "Harry" before it will outside of the block
 # can change the outside variable too so BE CAREFUL!!
+
+#*******************************************************
+
+class PizzaOven
+
+end
+
+oven = PizzaOven.new
+puts "cooking pizza in the oven #{oven}" #results in the oven object ID number
+
+#****************************************************
+
+class PizzaOven2
+  def cook
+    puts "cookin pizza in the oven #{oven}" #undefined local variable oven
+  end
+end
+
+oven = PizzaOven2.new
+oven.cook
+
+#****************************************************
+class PizzaOven3
+  def cook
+    puts "cookin pizza in the oven #{self}" #can use the number id of the oven object outside of scope
+  end
+end
+
+oven = PizzaOven3.new
+oven.cook
+print oven
