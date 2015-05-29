@@ -136,8 +136,24 @@
 # oven.cook(oven.temp, oven.crust) # use class methods that return a VALUE as params
 
 
-class PizzaOven5
-  def cook(crust = "deep dish", temp = 300)
+# class PizzaOven5
+#   def cook(crust = "deep dish", temp = 300)
+#     puts "Cookin #{crust} at #{temp}"
+#   end
+#
+#   def temp
+#     "400 F"
+#   end
+#
+#   def crust
+#     "NY Style"
+#   end
+# end
+# oven = PizzaOven5.new
+# oven.cook("better pizza", "400") # overrides default values
+
+class PizzaOven6
+  def cook(crust = self.crust, temp = self.temp) #can't call a circular argument but IF you add self.
     puts "Cookin #{crust} at #{temp}"
   end
 
@@ -149,5 +165,5 @@ class PizzaOven5
     "NY Style"
   end
 end
-oven = PizzaOven5.new
-oven.cook("better pizza", "400") # overrides default values
+oven = PizzaOven6.new
+oven.cook("better pizza", "400")
