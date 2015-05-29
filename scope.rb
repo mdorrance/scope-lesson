@@ -27,7 +27,7 @@
 # a = 4
 # b = 12
 #
-# def dombine_var(x)
+# def combine_var(x)
 #   puts "inner x is #{x}"
 #   puts "and outer b is #{b}"
 # end
@@ -53,3 +53,19 @@ a = 4
 combine_variables(a)
 
 #*******************************************************
+
+creatures = ["monkey", "angel", "deer"]
+
+hero = "Atlas"
+
+def battle_technique
+  ["heroically", "clumsily", "cleverly"].sample
+end
+
+creatures.each do |creature|
+  puts "#{hero} battles #{creature} #{battle_technique}"
+end
+
+#puts creature will error out because it is local to the block
+#the block has access to the local variables because it is still in the scope
+#of the class as a variable
